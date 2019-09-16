@@ -9,6 +9,10 @@ public class Artikel {
     public Artikel() {
     }
 
+    public Artikel(String aname) {
+        this.aname = aname;
+    }
+
     public void getVar(){
         System.out.println(this.aname);
     }
