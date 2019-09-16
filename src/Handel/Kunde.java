@@ -14,10 +14,16 @@ public class Kunde {
 
     public Kunde(String nachname) {
         this.nachname = nachname;
+        System.out.println("konstruktor Kunde");
+
     }
 
     public void getVar(){
         System.out.println(this.nachname);
+
+    }
+    protected void finalize(){
+        System.out.println("destruktor Kunde");
 
     }
 

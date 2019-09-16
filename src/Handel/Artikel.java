@@ -6,11 +6,12 @@ public class Artikel {
                    bezeichnung;
     private double preis;
 
-    public Artikel() {
-    }
+
 
     public Artikel(String aname) {
         this.aname = aname;
+        System.out.println("konstruktor Artikel");
+
     }
 
     public void getVar(){
