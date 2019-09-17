@@ -2,19 +2,28 @@ package Handel;
 
 public class Bestellung {
     private int bnr,
-                knr,
-                anr,
-                anzahl;
+            knr,
+            anr,
+            anzahl;
     private double gesamtpreis;
     private Kunde k;
 
-    public Bestellung(String nname, int anzahl ) {
+    public Bestellung(String nname, int anzahl) {
         this.anzahl = anzahl;
-        k = new Privatkunde();
+        k = new Privatkunde(nname);
         System.out.println("konstruktor Bestellung");
     }
 
-    public void getVar(){
+    public Bestellung(int kn, String nname, int an, int id) {
+        anzahl = an;
+        if (kn <= 500) {
+            k = new Privatkunde(nname, id);
+        } else {
+            k = new Firmenkunde(nname, id);
+        }
+    }
+
+    public void getVar() {
         System.out.println(anzahl);
     }
 
@@ -23,7 +32,7 @@ public class Bestellung {
     }
 
     @Override
-    protected void finalize(){
+    protected void finalize() {
         System.out.println("destruktor");
 
     }

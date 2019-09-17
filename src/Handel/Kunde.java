@@ -1,6 +1,6 @@
 package Handel;
 
-public abstract class  Kunde {
+public abstract class Kunde {
     private int knr;
     private String nachname;
     private String vorname;
@@ -8,9 +8,9 @@ public abstract class  Kunde {
     private String ort;
     private String strasse;
 
-    public Kunde() {
-        nachname = "N.N.";
-    }
+//    public Kunde() {
+//        nachname = "N.N.";
+//    }
 
     public Kunde(String nachname) {
         this.nachname = nachname;
@@ -18,12 +18,19 @@ public abstract class  Kunde {
 
     }
 
-    public void getVar(){
+    public Kunde(String nachname, int knr) {
+        this.knr = knr;
+        this.nachname = nachname;
+    }
+
+    public void getVar() {
         System.out.println(this.nachname);
 
     }
+
     public abstract void rechne();
-    protected void finalize(){
+
+    protected void finalize() {
         System.out.println("destruktor Kunde");
 
     }
