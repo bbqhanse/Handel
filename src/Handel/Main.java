@@ -20,7 +20,7 @@ public class Main {
             Firmenkunde fk = (Firmenkunde) k ;
             System.out.println(fk.getGruppe());
         }
-
+//todo
 
     }
 }
