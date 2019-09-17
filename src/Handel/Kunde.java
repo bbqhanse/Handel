@@ -1,6 +1,6 @@
 package Handel;
 
-public abstract class Kunde {
+public abstract class Kunde implements Hilfe {
     private int knr;
     private String nachname;
     private String vorname;

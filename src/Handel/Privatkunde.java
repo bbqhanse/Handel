@@ -19,4 +19,14 @@ public class Privatkunde extends Kunde {
     public int getBonitaet() {
         return bonitaet;
     }
+
+    @Override
+    public int addiere() {
+        return 3+7;
+    }
+
+    @Override
+    public int dividiere() {
+        return 20/5;
+    }
 }

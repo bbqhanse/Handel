@@ -7,6 +7,7 @@ public class Bestellung {
             anzahl;
     private double gesamtpreis;
     private Kunde k;
+    private static final int MWST = 19;
 
     public Bestellung(String nname, int anzahl) {
         this.anzahl = anzahl;

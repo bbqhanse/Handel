@@ -16,4 +16,14 @@ public class Firmenkunde extends Kunde {
     public int getGruppe() {
         return gruppe;
     }
+
+    @Override
+    public int addiere() {
+        return 7+7;
+    }
+
+    @Override
+    public int dividiere() {
+        return 25/5;
+    }
 }
