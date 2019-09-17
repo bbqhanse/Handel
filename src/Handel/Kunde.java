@@ -1,6 +1,6 @@
 package Handel;
 
-public class Kunde {
+public abstract class  Kunde {
     private int knr;
     private String nachname;
     private String vorname;
@@ -22,6 +22,7 @@ public class Kunde {
         System.out.println(this.nachname);
 
     }
+    public abstract void rechne();
     protected void finalize(){
         System.out.println("destruktor Kunde");
 

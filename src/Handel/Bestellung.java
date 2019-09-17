@@ -10,7 +10,7 @@ public class Bestellung {
 
     public Bestellung(String nname, int anzahl ) {
         this.anzahl = anzahl;
-        k = new Kunde(nname);
+        k = new Privatkunde();
         System.out.println("konstruktor Bestellung");
     }
 
