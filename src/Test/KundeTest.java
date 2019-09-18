@@ -1,6 +1,6 @@
 package Test;
 
-public class KundeTest implements Oma {
+public abstract class KundeTest implements Oma {
     String name;
 
     public KundeTest(String name) {
@@ -10,8 +10,5 @@ public class KundeTest implements Oma {
         System.out.println(this.name);
     }
 
-    @Override
-    public void sagEtwas() {
-        System.out.println("Hallo Oma");
-    }
+
 }
