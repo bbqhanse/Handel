@@ -3,7 +3,21 @@ package Test;
 public class Main {
 
     public static void main(String[] args) {
-        int i;
+
+        try {
+            MyException me = new MyException();
+            me.exMeth();
+        } catch (NumberFormatException e) {
+            System.out.println("40 zur basis 4 nicht möglich ...\n" + e.getMessage());
+            System.out.println(e);
+        } catch (ArithmeticException e) {
+            System.out.println("Division durch Null...\n" + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("algemeiner Fehler");
+        }
+
+
+        /*  int i;
         int z = 10;
         int n = 1;
         int erg;
@@ -24,7 +38,7 @@ public class Main {
             System.out.println("Division durch Null...\n"+e.getMessage());
         } catch (Exception e) {
             System.out.println("algemeiner Fehler");
-        }
+        }*/
 
     }
 }
