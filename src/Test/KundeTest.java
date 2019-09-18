@@ -5,6 +5,7 @@ public abstract class KundeTest implements Oma {
 
     public KundeTest(String name) {
         this.name = name;
+        System.out.println("Konstruktor von Kunde ( erzeugt Instanz von Kunde)");
     }
     void getName(){
         System.out.println(this.name);
