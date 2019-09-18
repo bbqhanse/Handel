@@ -1,10 +1,36 @@
 package Test;
 
+
+import java.io.*;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+try {
 
-        try {
+        for (int i = 0; i <= 1000; i++) {
+            FileWriter fw = new FileWriter("ausgabe.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Hallo Welt!");
+            bw.newLine();
+            bw.write("Hallo Welt1!");
+            bw.newLine();
+            bw.close();
+        }
+
+    FileReader fr = new FileReader("ausgabe.txt");
+    BufferedReader br = new BufferedReader(fr);
+    String zeile1;
+    while ((zeile1 = br.readLine()) != null) {
+        System.out.println(zeile1);
+    }
+
+} catch (IOException e) {
+    System.out.println(e.getMessage());
+}
+
+
+      /*  try {
 
             MyException me = new MyException();
             me.exMeth();
