@@ -1,13 +1,15 @@
 package Test;
 
-public class FirmenkundeTest extends KundeTest {
+public class FirmenkundeTest extends KundeTest  implements Oma{
     public FirmenkundeTest(String name) {
         super(name);
+        System.out.println("Konstruktor von FirmenKunde ( erzeugt Instanz von FirmenKunde)");
     }
 
     @Override
     public void sagEtwas() {
-        System.out.println("hallo Firmenkunde");
+//        super.sagEtwas();
+        System.out.println("sag etwas firmenkunde");
     }
 
     @Override

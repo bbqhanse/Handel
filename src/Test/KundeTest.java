@@ -14,9 +14,8 @@ public abstract class KundeTest implements Oma {
 
     @Override
     public void sagEtwas() {
-
+        System.out.println("sagEtwas Kunde");
     }
-
     @Override
     public void duAuch() {
 
