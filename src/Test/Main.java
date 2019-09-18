@@ -9,5 +9,9 @@ public class Main {
         PrivatkundeTest p1 = new PrivatkundeTest("Mayer");
         p1.getName();
         p1.sagEtwas();
+
+        FirmenkundeTest f1 = new FirmenkundeTest("Mayer GmbH");
+        f1.sagEtwas();
+        f1.getName();
     }
 }
