@@ -1,6 +1,6 @@
 package Test;
 
-public abstract class KundeTest implements Oma {
+public abstract class KundeTest  implements Oma {
     private String name;
 
     public KundeTest(String name) {
