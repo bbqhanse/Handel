@@ -3,14 +3,17 @@ package Test;
 public class Main {
 
     public static void main(String[] args) {
-//        KundeTest k1 = new KundeTest("Meier");
-//        k1.getName();
-//        k1.sagEtwas();
-        PrivatkundeTest p1 = new PrivatkundeTest("Mayer");
-        p1.sagEtwas();
+        int i;
+        int base = 0;
+        try {
+            for (base = 10; base >= 2; --base) {
+                i = Integer.parseInt("40", base);
+                System.out.println("40 base" + base + " = " + i);
+            }
+            System.out.println("Hier ... ");
+        } catch (NumberFormatException e) {
+            System.out.println("Fehler");
+        }
 
-        FirmenkundeTest f1 = new FirmenkundeTest("Mayer GmbH");
-        f1.sagEtwas();
-        f1.getName();
     }
 }
