@@ -32,6 +32,10 @@ public class Bestellung {
         return k;
     }
 
+    public static void oma(){
+        System.out.println("ich bin Berta.");
+    }
+
     @Override
     protected void finalize() {
         System.out.println("destruktor");
