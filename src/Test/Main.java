@@ -5,13 +5,22 @@ import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args)throws IOException{
+    public static void main(String[] args){
 
 
-        Datei d= new Datei();
+        int temp = 24;
 
-        d.dateiLesen();
+        try {
+            if (!(temp > -10 && temp <= 10)) {
+                throw new BereichsException("außerhalb des Bereichs");
+            } else {
 
+            }
+        } catch (BereichsException e) {
+            System.out.println(e.getMessage());
+            temp = 10;
+        }
+        System.out.println(temp);
 
 /*
 } catch (IOException e) {

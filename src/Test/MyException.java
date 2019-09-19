@@ -1,6 +1,9 @@
 package Test;
 
 public class MyException {
+    public void EigeneExcepton(){
+
+    }
    public void exMeth(){
        int i;
        int z = 10;
