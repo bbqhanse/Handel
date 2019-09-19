@@ -7,8 +7,12 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        Datei d = new Datei();
-        d.dateiLesen2();
+        try {
+            Datei d = new Datei();
+            d.dateiLesen2();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
 
 /*
 } catch (IOException e) {
