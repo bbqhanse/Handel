@@ -3,6 +3,19 @@ package Test;
 public class MyException {
     public void EigeneExcepton(){
 
+        int temp = 24;
+
+        try {
+            if (!(temp > -10 && temp <= 10)) {
+                throw new BereichsException("außerhalb des Bereichs");
+            } else {
+
+            }
+        } catch (BereichsException e) {
+            System.out.println(e.getMessage());
+            temp = 10;
+        }
+        System.out.println(temp);
     }
    public void exMeth(){
        int i;

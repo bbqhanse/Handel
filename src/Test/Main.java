@@ -1,26 +1,14 @@
 package Test;
 
 
-import java.io.*;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args)  {
 
-
-        int temp = 24;
-
-        try {
-            if (!(temp > -10 && temp <= 10)) {
-                throw new BereichsException("außerhalb des Bereichs");
-            } else {
-
-            }
-        } catch (BereichsException e) {
-            System.out.println(e.getMessage());
-            temp = 10;
-        }
-        System.out.println(temp);
+        Datei d = new Datei();
+        d.dateiLesen2();
 
 /*
 } catch (IOException e) {
