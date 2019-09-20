@@ -1,13 +1,11 @@
 package Handel;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.Scanner;
 
 public class Datei {
     private int knr;
-    private String vornahme;
+    private String vorname;
     private String nachnahme;
     private String plz;
     private String ort;
@@ -21,7 +19,7 @@ public class Datei {
 
     public void schreiben() {
 
-        String kd = knr+"|"+vornahme+"|"+nachnahme+"|"+plz+"|"+ort+"|"+strasse+"|"+hausnr;
+        String kd = knr+"|"+ vorname +"|"+nachnahme+"|"+plz+"|"+ort+"|"+strasse+"|"+hausnr;
         System.out.println(kd);
         PrintWriter pWriter = null;
         try {
@@ -40,10 +38,34 @@ public class Datei {
 
     }
 
-    public String lesen() {
-        return "a";
+    public void lesen() throws IOException {
+        FileReader fr = new FileReader(dateipfad);
+        BufferedReader br = new BufferedReader(fr);
+        String zeile1;
+        while ((zeile1 = br.readLine()) != null) {
+            System.out.println(zeile1);
+        }
+
+
     }
 
+    public void eingaben(){
+        System.out.println("Kundennummer: ");
+        Scanner sc = new Scanner(System.in);
+        knr = sc.nextInt();
+        System.out.println("Vorname: ");
+        vorname = sc.next();
+        System.out.println("nachname: ");
+        nachnahme = sc.next();
+        System.out.println("Plz: ");
+        plz = sc.next();
+        System.out.println("ort: ");
+        ort = sc.next();
+        System.out.println("Straße: ");
+        strasse = sc.next();
+        System.out.println("hausnr: ");
+        hausnr = sc.next();
+    }
 
     //getter und setter
     public int getKnr() {
@@ -54,12 +76,12 @@ public class Datei {
         this.knr = knr;
     }
 
-    public String getVornahme() {
-        return vornahme;
+    public String getVorname() {
+        return vorname;
     }
 
-    public void setVornahme(String vornahme) {
-        this.vornahme = vornahme;
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
     }
 
     public String getNachnahme() {

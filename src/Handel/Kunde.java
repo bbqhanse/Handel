@@ -7,6 +7,7 @@ public abstract class Kunde implements Hilfe {
     private String plz;
     private String ort;
     private String strasse;
+    private String hausnr;
 
 //    public Kunde() {
 //        nachname = "N.N.";
@@ -23,10 +24,6 @@ public abstract class Kunde implements Hilfe {
         this.nachname = nachname;
     }
 
-    public void getVar() {
-        System.out.println(this.nachname);
-
-    }
 
     public abstract void rechne();
 
@@ -35,5 +32,59 @@ public abstract class Kunde implements Hilfe {
 
     }
 
+    public int getKnr() {
+        return knr;
+    }
 
+    public void setKnr(int knr) {
+        this.knr = knr;
+    }
+
+    public String getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
+    public String getPlz() {
+        return plz;
+    }
+
+    public void setPlz(String plz) {
+        this.plz = plz;
+    }
+
+    public String getOrt() {
+        return ort;
+    }
+
+    public void setOrt(String ort) {
+        this.ort = ort;
+    }
+
+    public String getStrasse() {
+        return strasse;
+    }
+
+    public void setStrasse(String strasse) {
+        this.strasse = strasse;
+    }
+
+    public String getHausnr() {
+        return hausnr;
+    }
+
+    public void setHausnr(String hausnr) {
+        this.hausnr = hausnr;
+    }
 }
