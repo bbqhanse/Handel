@@ -38,7 +38,7 @@ public class Datei {
 
     }
 
-    public void lesen(int knr) throws IOException {
+    public Kunde lesen(int knr) throws IOException {
         FileReader fr = new FileReader(dateipfad);
         BufferedReader br = new BufferedReader(fr);
         Kunde k;
@@ -51,16 +51,15 @@ public class Datei {
                 System.out.println("test");
                 if (Integer.parseInt(teile[0]) <= 500) {
                     k = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                    return k;
 
                 } else {
                     k = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                    return k;
                 }
-                break;
             }
-
         }
-
-
+        return null;
     }
 
     public void eingaben() {
