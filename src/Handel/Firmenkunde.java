@@ -13,6 +13,10 @@ public class Firmenkunde extends Kunde {
         super(nachname, knr);
     }
 
+    public Firmenkunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr) {
+        super(knr, nachname, vorname, plz, ort, strasse, hausnr);
+    }
+
     public int getGruppe() {
         return gruppe;
     }

@@ -8,6 +8,10 @@ public class Privatkunde extends Kunde {
         System.out.println(bonitaet);
     }
 
+    public Privatkunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr) {
+        super(knr, nachname, vorname, plz, ort, strasse, hausnr);
+    }
+
     public Privatkunde(String nachname) {
         super(nachname);
     }

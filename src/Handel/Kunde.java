@@ -13,6 +13,16 @@ public abstract class Kunde implements Hilfe {
 //        nachname = "N.N.";
 //    }
 
+    public Kunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr) {
+        this.knr = knr;
+        this.nachname = nachname;
+        this.vorname = vorname;
+        this.plz = plz;
+        this.ort = ort;
+        this.strasse = strasse;
+        this.hausnr = hausnr;
+    }
+
     public Kunde(String nachname) {
         this.nachname = nachname;
         System.out.println("konstruktor Kunde");
@@ -22,6 +32,9 @@ public abstract class Kunde implements Hilfe {
     public Kunde(String nachname, int knr) {
         this.knr = knr;
         this.nachname = nachname;
+    }
+    public void ausgabe(){
+        System.out.println(new StringBuilder().append(knr).append(" ").append(vorname).append(" ").append(nachname).append(" ").append(plz).append(" ").append(ort).append(" ").append(strasse).append(" ").append(hausnr).toString());
     }
 
 

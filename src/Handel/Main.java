@@ -1,12 +1,15 @@
 package Handel;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         //todo Aufnahme einer Bestellung
-
+        System.out.println("Kundennummer: ");
+        Scanner sc = new Scanner(System.in);
+        int knr = sc.nextInt();
 
 
         // todo Neukunden aufnahme
@@ -14,6 +17,6 @@ public class Main {
 
 //        d.eingaben();
 //        d.schreiben();
-        d.lesen();
+        d.lesen(knr);
     }
 }

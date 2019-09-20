@@ -19,7 +19,7 @@ public class Datei {
 
     public void schreiben() {
 
-        String kd = knr+"|"+ vorname +"|"+nachnahme+"|"+plz+"|"+ort+"|"+strasse+"|"+hausnr;
+        String kd = knr + "|" + vorname + "|" + nachnahme + "|" + plz + "|" + ort + "|" + strasse + "|" + hausnr;
         System.out.println(kd);
         PrintWriter pWriter = null;
         try {
@@ -38,18 +38,32 @@ public class Datei {
 
     }
 
-    public void lesen() throws IOException {
+    public void lesen(int knr) throws IOException {
         FileReader fr = new FileReader(dateipfad);
         BufferedReader br = new BufferedReader(fr);
+        Kunde k;
         String zeile1;
+        String[] teile;
         while ((zeile1 = br.readLine()) != null) {
-            System.out.println(zeile1);
+            teile = zeile1.split("\\|");
+            if (Integer.parseInt(teile[0]) == knr) {
+                System.out.println(zeile1);
+                System.out.println("test");
+                if (Integer.parseInt(teile[0]) <= 500) {
+                    k = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+
+                } else {
+                    k = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                }
+                break;
+            }
+
         }
 
 
     }
 
-    public void eingaben(){
+    public void eingaben() {
         System.out.println("Kundennummer: ");
         Scanner sc = new Scanner(System.in);
         knr = sc.nextInt();
@@ -66,6 +80,7 @@ public class Datei {
         System.out.println("hausnr: ");
         hausnr = sc.next();
     }
+
 
     //getter und setter
     public int getKnr() {
