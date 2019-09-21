@@ -25,7 +25,7 @@ public class Datei {
         try {
             pWriter =
                     new PrintWriter(new BufferedWriter(new FileWriter(this.dateipfad, true)));
-            pWriter.println(kd);//"12|Hans|Meier|10245|Berlin|Hausburgstr.|24"
+            pWriter.println(kd); //"12|Hans|Meier|10245|Berlin|Hausburgstr.|24");
 
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -44,6 +44,7 @@ public class Datei {
         Kunde k;
         String zeile1;
         String[] teile;
+
         while ((zeile1 = br.readLine()) != null) {
             teile = zeile1.split("\\|");
             if (Integer.parseInt(teile[0]) == knr) {
