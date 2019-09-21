@@ -38,14 +38,26 @@ public class Datei {
 
     }
 
+    /**
+     *  Liest die datei ein und gibt eine Instanz von {@link Firmenkunde} oder {@link Privatkunde} zurück
+     * @param knr Sucht anhand der Kundennummer die Datei durch
+     * @return den Kunden mit der Kundennummer
+     * @throws IOException
+     */
+
     public Kunde lesen(int knr) throws IOException {
+        // Hier wird ein reader zum lesen des Files erstellt
         FileReader fr = new FileReader(dateipfad);
+        // Bufferreader ein bisschen schneller
         BufferedReader br = new BufferedReader(fr);
         Kunde k;
         String zeile1;
+        // hier wird ein array von string erstellt
         String[] teile;
-
+// hier werden alle zeilen eingelesen bis keine zeile mehr vorhanden ist
         while ((zeile1 = br.readLine()) != null) {
+            // hier wird die gelesene Zeile anhand des pipe symbol getrennt
+            // die beiden \\ dienen zum escapen damit auch wirklich das symbol gemeint ist
             teile = zeile1.split("\\|");
             if (Integer.parseInt(teile[0]) == knr) {
                 System.out.println(zeile1);
@@ -62,6 +74,10 @@ public class Datei {
         }
         return null;
     }
+
+    /**
+     * Setzen der Variablen
+     */
 
     public void eingaben() {
         System.out.println("Kundennummer: ");
@@ -81,6 +97,10 @@ public class Datei {
         hausnr = sc.next();
     }
 
+    /*
+     * Getter und Setter der Instanz Variablen
+     *
+     */
 
     //getter und setter
     public int getKnr() {

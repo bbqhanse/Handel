@@ -9,6 +9,7 @@ public class Main {
         Datei d = new Datei("kunde.txt");
         Kunde k;
         //todo Aufnahme einer Bestellung
+        d.eingaben();
         d.schreiben();
         System.out.println("Kundennummer: ");
         Scanner sc = new Scanner(System.in);

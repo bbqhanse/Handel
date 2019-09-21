@@ -1,5 +1,12 @@
 package Handel;
 
+/**
+ * Abstract class
+ * von dieser Klasse kann keine Instanz gebildet werden
+ * sie implements das Interface Hilfe welche nur abstracte methoden bereitstellt
+ * die dann entweder in der klasse hier oder in den abgeleiteten Klassen programmiert
+ * werden muss
+ */
 public abstract class Kunde implements Hilfe {
     private int knr;
     private String nachname;
@@ -12,6 +19,18 @@ public abstract class Kunde implements Hilfe {
 //    public Kunde() {
 //        nachname = "N.N.";
 //    }
+
+    /**
+     * Der Konstruktor der alle Variablen der klasse setzt
+     *
+     * @param knr      Kundennummer
+     * @param nachname Nachname
+     * @param vorname  Vorname
+     * @param plz      PLZ
+     * @param ort      Ort
+     * @param strasse  Straße
+     * @param hausnr   Hausnummer
+     */
 
     public Kunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr) {
         this.knr = knr;
@@ -33,11 +52,18 @@ public abstract class Kunde implements Hilfe {
         this.knr = knr;
         this.nachname = nachname;
     }
-    public void ausgabe(){
+
+    /**
+     * Eine methode um die Instanz Variablen Auszugeben
+     * ich benutze den {@link StringBuilder} da er Schneller ist
+     */
+    public void ausgabe() {
         System.out.println(new StringBuilder().append(knr).append(" ").append(vorname).append(" ").append(nachname).append(" ").append(plz).append(" ").append(ort).append(" ").append(strasse).append(" ").append(hausnr).toString());
     }
 
-
+    /*
+    zum zeigen von abstrakten methoden
+     */
     public abstract void rechne();
 
     protected void finalize() {
@@ -45,6 +71,9 @@ public abstract class Kunde implements Hilfe {
 
     }
 
+    /*
+    getter und setter
+     */
     public int getKnr() {
         return knr;
     }

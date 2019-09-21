@@ -1,5 +1,6 @@
 package Handel;
 
+
 public class Firmenkunde extends Kunde {
     private int gruppe;
 
