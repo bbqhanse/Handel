@@ -3,6 +3,11 @@ package Handel;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * Zum Lesen und Schreiben der Kundendaten in einer datei
+ *
+ */
+
 public class Datei {
     private int knr;
     private String vorname;
@@ -102,7 +107,6 @@ public class Datei {
      *
      */
 
-    //getter und setter
     public int getKnr() {
         return knr;
     }
