@@ -71,6 +71,7 @@ public abstract class Kunde implements Hilfe {
 
     }
 
+
     /*
     getter und setter
      */

@@ -1,11 +1,41 @@
 package Test.colection;
 
-import java.util.*;
+import java.util.BitSet;
 
 public class Main {
     public static void main(String[] args) {
         //int[] ar= { 1,2,3,4,5};
 
+//bitset
+        /*
+        BitSet b = new BitSet();
+        System.out.println(b);
+        boolean ok;
+        for (int i = 2; i <= 20; i++) {
+            ok = true;
+            for(int j = 2; j < i;j++){
+                System.out.print(i+" "+ j+" "+ b.get(j)+" ");
+                if(b.get(j)&& i%j ==0){
+                    System.out.print("in der Schleife \n");
+                    ok = false;
+                    break;
+                }
+                System.out.print("\n");
+            }
+            if ((ok)){
+                System.out.println("ok");
+                b.set(i);
+            }
+
+        }
+
+        for (int i = 1; i <= 20;++i){
+            if(b.get(i)){
+                System.out.println(i);
+            }
+        }
+
+        /*
         HashMap h = new HashMap();
         h.put("Berta",75);
         h.put("Marta",70);
@@ -20,7 +50,6 @@ public class Main {
             System.out.println(
                     key + "-->"+ h.get(key)
             );
-
 
         }
 
