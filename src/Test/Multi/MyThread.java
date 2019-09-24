@@ -8,10 +8,15 @@ public class MyThread extends Thread{
     }
 
 
-    public void run(){
+    public void run() {
         int i = 0;
         while (i<=50){
+            if(this.isInterrupted()) {
+            break;
+            }
             System.out.println(this.getName()+"\t "+ i++);
+
+
         }
     }
 }
