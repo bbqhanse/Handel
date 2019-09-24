@@ -1,4 +1,4 @@
-package Test;
+package Test.Test;
 
 public class BereichsException extends Exception {
 

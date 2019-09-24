@@ -1,4 +1,4 @@
-package Test;
+package Test.Test;
 
 public class MyException {
     public void EigeneExcepton(){

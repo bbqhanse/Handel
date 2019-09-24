@@ -16,7 +16,9 @@ public class Datei {
     private String ort;
     private String strasse;
     private String hausnr;
+    private String email;
     private String dateipfad;
+
 
     public Datei(String dateipfad) {
         this.dateipfad = dateipfad;
@@ -47,35 +49,40 @@ public class Datei {
      *  Liest die datei ein und gibt eine Instanz von {@link Firmenkunde} oder {@link Privatkunde} zurück
      * @param knr Sucht anhand der Kundennummer die Datei durch
      * @return den Kunden mit der Kundennummer
-     * @throws IOException
+     *
      */
 
-    public Kunde lesen(int knr) throws IOException {
+    public Kunde lesen(int knr) {
         // Hier wird ein reader zum lesen des Files erstellt
-        FileReader fr = new FileReader(dateipfad);
-        // Bufferreader ein bisschen schneller
-        BufferedReader br = new BufferedReader(fr);
-        Kunde k;
-        String zeile1;
-        // hier wird ein array von string erstellt
-        String[] teile;
-// hier werden alle zeilen eingelesen bis keine zeile mehr vorhanden ist
-        while ((zeile1 = br.readLine()) != null) {
-            // hier wird die gelesene Zeile anhand des pipe symbol getrennt
-            // die beiden \\ dienen zum escapen damit auch wirklich das symbol gemeint ist
-            teile = zeile1.split("\\|");
-            if (Integer.parseInt(teile[0]) == knr) {
-                System.out.println(zeile1);
-                System.out.println("test");
-                if (Integer.parseInt(teile[0]) <= 500) {
-                    k = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
-                    return k;
 
-                } else {
-                    k = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
-                    return k;
+        try {
+            FileReader fr = new FileReader(dateipfad);
+            // Bufferreader ein bisschen schneller
+            BufferedReader br = new BufferedReader(fr);
+            Kunde k;
+            String zeile1;
+            // hier wird ein array von string erstellt
+            String[] teile;
+// hier werden alle zeilen eingelesen bis keine zeile mehr vorhanden ist
+            while ((zeile1 = br.readLine()) != null) {
+                // hier wird die gelesene Zeile anhand des pipe symbol getrennt
+                // die beiden \\ dienen zum escapen damit auch wirklich das symbol gemeint ist
+                teile = zeile1.split("\\|");
+                if (Integer.parseInt(teile[0]) == knr) {
+                    System.out.println(zeile1);
+                    System.out.println("test");
+                    if (Integer.parseInt(teile[0]) <= 500) {
+                        k = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                        return k;
+
+                    } else {
+                        k = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                        return k;
+                    }
                 }
             }
+        } catch (IOException | NumberFormatException e) {
+            System.err.println(e.getMessage());
         }
         return null;
     }
@@ -161,5 +168,13 @@ public class Datei {
 
     public void setHausnr(String hausnr) {
         this.hausnr = hausnr;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

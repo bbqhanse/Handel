@@ -1,4 +1,4 @@
-package Test;
+package Test.Test;
 
 public class FirmenkundeTest extends KundeTest  implements Oma{
     public FirmenkundeTest(String name) {

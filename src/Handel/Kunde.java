@@ -14,6 +14,7 @@ public abstract class Kunde implements Hilfe {
     private String plz;
     private String ort;
     private String strasse;
+    private String email;
     private String hausnr;
 
 //    public Kunde() {
@@ -23,7 +24,7 @@ public abstract class Kunde implements Hilfe {
     /**
      * Der Konstruktor der alle Variablen der klasse setzt
      *
-     * @param knr      Kundennummer
+     * @param  knr      Kundennummer
      * @param nachname Nachname
      * @param vorname  Vorname
      * @param plz      PLZ
@@ -31,8 +32,7 @@ public abstract class Kunde implements Hilfe {
      * @param strasse  Straße
      * @param hausnr   Hausnummer
      */
-
-    public Kunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr) {
+    public Kunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr ) {
         this.knr = knr;
         this.nachname = nachname;
         this.vorname = vorname;
@@ -129,5 +129,13 @@ public abstract class Kunde implements Hilfe {
 
     public void setHausnr(String hausnr) {
         this.hausnr = hausnr;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

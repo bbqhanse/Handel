@@ -1,7 +1,5 @@
-package Test;
+package Test.Test;
 
-
-import java.io.IOException;
 
 public class Main {
 
