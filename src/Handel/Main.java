@@ -17,7 +17,7 @@ public class Main {
             Bestellung b = new Bestellung(knr);
             Datei d = new Datei("kunde.txt");
             d.lesen(b.getKunde());
-            System.out.println(b.getKunde().getNachname());
+            b.getKunde().ausgabe();
 
         } else {
 
@@ -33,7 +33,7 @@ public class Main {
 //            k = new Privatkunde(knr);
 //        } else {
 //            k = new Firmenkunde(knr);
-        }
+//        }
 //        k.eingaben();
 //        Datei d = new Datei("kunde.txt");
 //        d.schreiben(k);
@@ -60,5 +60,5 @@ public class Main {
 //        d.schreiben();
 
          */
-    }
+    }}
 

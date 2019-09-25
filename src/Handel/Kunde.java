@@ -64,7 +64,7 @@ public abstract class Kunde implements Hilfe {
      * ich benutze den {@link StringBuilder} da er Schneller ist
      */
     public void ausgabe() {
-        System.out.println(new StringBuilder().append(knr).append(" ").append(vorname).append(" ").append(nachname).append(" ").append(plz).append(" ").append(ort).append(" ").append(strasse).append(" ").append(hausnr).toString());
+        System.out.println(new StringBuilder().append(knr).append(" ").append(vorname).append(" ").append(nachname).append(" ").append(plz).append(" ").append(ort).append(" ").append(strasse).append(" ").append(hausnr).append(" ").append(email).toString());
     }
 
     /*
