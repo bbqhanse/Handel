@@ -7,19 +7,36 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        System.out.println("Bestellung (1) \n \t\t oder\n Neukunde(2) ");
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        System.out.println("Kundennummer: ");
+        int knr = sc.nextInt();
+        if (x == 1) {
+            //Aufnahme einer Bestellung
+            Bestellung b = new Bestellung(knr);
+            Datei d = new Datei("kunde.txt");
+            d.lesen(b.getKunde());
+            System.out.println(b.getKunde().getNachname());
+
+        } else {
+
+        }
+
         //todo Neukunde aufnahme
 
-        int knr;
-        Kunde k;
-        System.out.println("Kundennummer: ");
-        Scanner sc = new Scanner(System.in);
-        knr = sc.nextInt();
-        if(knr <= 500){
-            k= new Privatkunde(knr);
-        }else{
-            k= new Firmenkunde(knr);
+
+//        Kunde k;
+//        System.out.println("Kundennummer: ");
+//        knr = sc.nextInt();
+//        if (knr <= 500) {
+//            k = new Privatkunde(knr);
+//        } else {
+//            k = new Firmenkunde(knr);
         }
-        k.eingaben();
+//        k.eingaben();
+//        Datei d = new Datei("kunde.txt");
+//        d.schreiben(k);
 
         /*    try {
             Datei d = new Datei("kunde.txt");
@@ -44,4 +61,4 @@ public class Main {
 
          */
     }
-}
+

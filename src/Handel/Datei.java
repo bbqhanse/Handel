@@ -16,26 +16,28 @@ public class Datei {
         this.dateipfad = dateipfad;
     }
 
-//    public void schreiben() {
-//
-//        String kd = knr + "|" + vorname + "|" + nachnahme + "|" + plz + "|" + ort + "|" + strasse + "|" + hausnr;
-//        System.out.println(kd);
-//        PrintWriter pWriter = null;
-//        try {
-//            pWriter =
-//                    new PrintWriter(new BufferedWriter(new FileWriter(this.dateipfad, true)));
-//            pWriter.println(kd); //"12|Hans|Meier|10245|Berlin|Hausburgstr.|24");
-//
-//        } catch (IOException e) {
-//            System.err.println(e.getMessage());
-//        } finally {
-//            if (pWriter != null) {
-//                pWriter.flush();
-//                pWriter.close();
-//            }
-//        }
-//
-//    }
+    public void schreiben(Kunde k) {
+
+        String kd;// = k.knr + "|" + vorname + "|" + nachnahme + "|" + plz + "|" + ort + "|" + strasse + "|" + hausnr;
+        kd=k.getKnr()+"|"+k.getVorname()+"|"+k.getNachname()+"|"+
+                k.getPlz()+"|"+k.getOrt()+"|"+k.getStrasse()+"|"+k.getHausnr()+"|"+k.getEmail();
+        System.out.println(kd);
+        PrintWriter pWriter = null;
+        try {
+            pWriter =
+                    new PrintWriter(new BufferedWriter(new FileWriter(this.dateipfad, true)));
+            pWriter.println(kd); //"12|Hans|Meier|10245|Berlin|Hausburgstr.|24");
+
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            if (pWriter != null) {
+                pWriter.flush();
+                pWriter.close();
+            }
+        }
+
+    }
 
     /**
      *  Liest die datei ein und gibt eine Instanz von {@link Firmenkunde} oder {@link Privatkunde} zurück
@@ -78,6 +80,47 @@ public class Datei {
         return null;
     }
 
+
+    /**
+     *  Liest die datei ein und gibt eine Instanz von {@link Firmenkunde} oder {@link Privatkunde} zurück
+     * @param knr Sucht anhand der Kundennummer die Datei durch
+     * @return den Kunden mit der Kundennummer
+     *
+     */
+    public void lesen(Kunde kunde) {
+        // Hier wird ein reader zum lesen des Files erstellt
+
+        try {
+            FileReader fr = new FileReader(dateipfad);
+            // Bufferreader ein bisschen schneller
+            BufferedReader br = new BufferedReader(fr);
+
+            String zeile1;
+            // hier wird ein array von string erstellt
+            String[] teile;
+// hier werden alle zeilen eingelesen bis keine zeile mehr vorhanden ist
+            while ((zeile1 = br.readLine()) != null) {
+                // hier wird die gelesene Zeile anhand des pipe symbol getrennt
+                // die beiden \\ dienen zum escapen damit auch wirklich das symbol gemeint ist
+                teile = zeile1.split("\\|");
+                if (Integer.parseInt(teile[0]) == kunde.getKnr()) {
+                    System.out.println(zeile1);
+                    System.out.println("test");
+                    if (Integer.parseInt(teile[0]) <= 500) {
+                        kunde = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+
+
+                    } else {
+                        kunde = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+
+                    }
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            System.err.println(e.getMessage());
+        }
+
+    }
 
 
 
