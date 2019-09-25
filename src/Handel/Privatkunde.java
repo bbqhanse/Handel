@@ -12,6 +12,10 @@ public class Privatkunde extends Kunde {
         super(knr, nachname, vorname, plz, ort, strasse, hausnr);
     }
 
+    public Privatkunde(int kundenNr) {
+        super(kundenNr);
+    }
+
     public Privatkunde(String nachname) {
         super(nachname);
     }

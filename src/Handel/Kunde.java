@@ -1,5 +1,7 @@
 package Handel;
 
+import java.util.Scanner;
+
 /**
  * Abstract class
  * von dieser Klasse kann keine Instanz gebildet werden
@@ -24,7 +26,7 @@ public abstract class Kunde implements Hilfe {
     /**
      * Der Konstruktor der alle Variablen der klasse setzt
      *
-     * @param  knr      Kundennummer
+     * @param knr      Kundennummer
      * @param nachname Nachname
      * @param vorname  Vorname
      * @param plz      PLZ
@@ -46,6 +48,10 @@ public abstract class Kunde implements Hilfe {
         this.nachname = nachname;
         System.out.println("konstruktor Kunde");
 
+    }
+
+    public Kunde(int kundenNr) {
+        this.knr = kundenNr;
     }
 
     public Kunde(String nachname, int knr) {
@@ -70,7 +76,30 @@ public abstract class Kunde implements Hilfe {
         System.out.println("destruktor Kunde");
 
     }
+    /**
+     * Setzen der Variablen
+     */
 
+    public void eingaben() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Vorname: ");
+        vorname = sc.next();
+        System.out.println("nachname: ");
+        nachname = sc.next();
+        System.out.println("Plz: ");
+        plz = sc.next();
+        System.out.println("ort: ");
+        ort = sc.next();
+        System.out.println("Straße: ");
+        strasse = sc.next();
+        System.out.println("hausnr: ");
+        hausnr = sc.next();
+        do {
+            System.out.println("email");
+            email = sc.next();
+        }while (!(email.matches(".+@.+\\..{2,}")));
+
+    }
 
     /*
     getter und setter

@@ -4,11 +4,10 @@ package Handel;
 public class Firmenkunde extends Kunde {
     private int gruppe;
 
-    @Override
-    public void rechne() {
-        System.out.println(this.gruppe);
-
+    public Firmenkunde(int kundenNr) {
+        super(kundenNr);
     }
+//Konstruktoren
 
     public Firmenkunde(String nachname, int knr) {
         super(nachname, knr);
@@ -18,17 +17,23 @@ public class Firmenkunde extends Kunde {
         super(knr, nachname, vorname, plz, ort, strasse, hausnr);
     }
 
+    @Override
+    public void rechne() {
+        System.out.println(this.gruppe);
+
+    }
+
     public int getGruppe() {
         return gruppe;
     }
 
     @Override
     public int addiere() {
-        return 7+7;
+        return 7 + 7;
     }
 
     @Override
     public int dividiere() {
-        return 25/5;
+        return 25 / 5;
     }
 }
