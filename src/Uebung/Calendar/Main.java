@@ -13,5 +13,6 @@ public class Main {
         System.out.println(cal.get(Calendar.YEAR));
         System.out.println(cal.get(Calendar.HOUR_OF_DAY));
         System.out.println(cal.isLeapYear(cal.get(Calendar.YEAR)));
+
     }
 }
