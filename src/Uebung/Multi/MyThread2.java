@@ -1,4 +1,4 @@
-package Test.Multi;
+package Uebung.Multi;
 
 public class MyThread2 extends Thread {
     private int x =0;

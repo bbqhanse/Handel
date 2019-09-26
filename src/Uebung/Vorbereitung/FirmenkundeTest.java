@@ -1,4 +1,4 @@
-package Test.Test;
+package Uebung.Vorbereitung;
 
 public class FirmenkundeTest extends KundeTest  implements Oma{
     public FirmenkundeTest(String name) {

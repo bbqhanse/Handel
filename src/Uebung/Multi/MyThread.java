@@ -1,4 +1,4 @@
-package Test.Multi;
+package Uebung.Multi;
 
 public class MyThread extends A implements Runnable{
 

@@ -1,4 +1,4 @@
-package Test.Test;
+package Uebung.Vorbereitung;
 
 public interface Oma {
     void sagEtwas();

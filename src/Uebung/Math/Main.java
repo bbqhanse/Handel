@@ -1,4 +1,4 @@
-package Test.Math;
+package Uebung.Math;
 
 public class Main {
     public static void main(String[] args) {

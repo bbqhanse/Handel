@@ -1,4 +1,4 @@
-package Test.Test;
+package Uebung.Vorbereitung;
 
 import java.io.*;
 

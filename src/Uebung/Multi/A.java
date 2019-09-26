@@ -1,4 +1,4 @@
-package Test.Multi;
+package Uebung.Multi;
 
 public  class A  {
     private String name;

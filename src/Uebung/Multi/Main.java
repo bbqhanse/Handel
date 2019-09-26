@@ -1,4 +1,4 @@
-package Test.Multi;
+package Uebung.Multi;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

@@ -1,4 +1,4 @@
-package Test.colection;
+package Uebung.colection;
 
 import java.util.BitSet;
 

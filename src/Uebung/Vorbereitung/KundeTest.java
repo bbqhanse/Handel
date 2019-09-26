@@ -1,4 +1,4 @@
-package Test.Test;
+package Uebung.Vorbereitung;
 
 public abstract class KundeTest  implements Oma {
     private String name;

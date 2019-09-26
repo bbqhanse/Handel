@@ -1,4 +1,4 @@
-package Test.colection;
+package Uebung.colection;
 
 public class zahl {
     int a ;

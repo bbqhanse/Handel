@@ -1,4 +1,4 @@
-package Test.Test;
+package Uebung.Vorbereitung;
 
 public class PrivatkundeTest extends KundeTest {
 
