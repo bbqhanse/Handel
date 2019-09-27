@@ -7,6 +7,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        Gui gui = new Gui();
+
+        /*
         System.out.println("Bestellung (1) \n \t\t oder\n Neukunde(2) ");
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
