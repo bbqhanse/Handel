@@ -1,11 +1,11 @@
 package Handel;
 
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public class Gui extends Frame {
 
+   private Label label;
+   private TextField tf1;
 
     public Gui() {
         this.setSize(500, 400);
@@ -16,8 +16,10 @@ public class Gui extends Frame {
 
         // Panels für die Dateneingabe oder Ausgabe
         Panel panelDaten = new Panel(new FlowLayout(FlowLayout.RIGHT));
-        panelDaten.add(new Label("Kunden nr"));
-        panelDaten.add(new TextField(25));
+        label = new Label("Kunden nr");
+        panelDaten.add(label);
+        tf1= new TextField(25);
+        panelDaten.add(tf1);
         Panel panelDaten1 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten1.add(new Label("Vorname"));
         panelDaten1.add(new TextField(25));
@@ -56,12 +58,12 @@ public class Gui extends Frame {
 
         Panel panelBestandskunden = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelBestandskunden.add(new Button("Bestandskunde "));
-        bNeukunde.addMouseListener(new MyMouseListener());
         //Main Fenster
         this.add(panelDatenzusamme, BorderLayout.CENTER);
         this.add(kundenButton,BorderLayout.SOUTH);
         this.add(panelBestandskunden,BorderLayout.EAST);
 
+        bNeukunde.addMouseListener(new MyMouseListener(tf1));
 
 /*        this.addWindowListener(new WindowAdapter() {
             @Override
@@ -72,6 +74,10 @@ public class Gui extends Frame {
 
 
 
+    }
+
+    public TextField getTf1() {
+        return tf1;
     }
 
     private Panel daten1(String name) {

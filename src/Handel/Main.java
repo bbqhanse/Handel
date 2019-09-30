@@ -27,8 +27,6 @@ public class Main {
         }
 
         //todo Neukunde aufnahme
-
-
 //        Kunde k;
 //        System.out.println("Kundennummer: ");
 //        knr = sc.nextInt();
