@@ -6,6 +6,13 @@ public class Gui extends Frame {
 
    private Label label;
    private TextField tf1;
+   private TextField tf2;
+   private TextField tf3;
+   private TextField tf4;
+   private TextField tf5;
+   private TextField tf6;
+   private TextField tf7;
+   private TextField tf8;
 
     public Gui() {
         this.setSize(500, 400);
@@ -22,23 +29,32 @@ public class Gui extends Frame {
         panelDaten.add(tf1);
         Panel panelDaten1 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten1.add(new Label("Vorname"));
-        panelDaten1.add(new TextField(25));
+        tf2 =new TextField(25);
+        panelDaten1.add(tf2);
         Panel panelDaten2 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten2.add(new Label("Nachnahme"));
-        panelDaten2.add(new TextField(25));
+        tf3=new TextField(25);
+        panelDaten2.add(tf3);
         Panel panelDaten3 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten3.add(new Label("Strasse"));
-        panelDaten3.add(new TextField(25));
+        tf4=new TextField(25);
+        panelDaten3.add(tf4);
         Panel panelDaten4 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten4.add(new Label("Hausnummer"));
-        panelDaten4.add(new TextField(25));
+        tf5=new TextField(25);
+        panelDaten4.add(tf5);
         Panel panelDaten5 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten5.add(new Label("PLZ"));
-        panelDaten5.add(new TextField(25));
+        tf6=new TextField(25);
+        panelDaten5.add(tf6);
         Panel panelDaten6 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten6.add(new Label("Ort"));
+        tf7 =new TextField(25);
         panelDaten6.add(new TextField(25));
-        Panel panelDaten7 = daten1("E-mail");
+        Panel panelDaten7 = new Panel(new FlowLayout(FlowLayout.RIGHT));
+        panelDaten7.add(new Label("E-mail"));
+        tf8 =new TextField(25);
+        panelDaten7.add(new TextField(25));
 
 //Panel für die daten spalten;
         Panel panelDatenzusamme = new Panel(new GridLayout(8, 0));
@@ -63,7 +79,7 @@ public class Gui extends Frame {
         this.add(kundenButton,BorderLayout.SOUTH);
         this.add(panelBestandskunden,BorderLayout.EAST);
 
-        bNeukunde.addMouseListener(new MyMouseListener(tf1));
+        bNeukunde.addMouseListener(new MyMouseListener(tf1,tf2,tf3));
 
 /*        this.addWindowListener(new WindowAdapter() {
             @Override

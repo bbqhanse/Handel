@@ -34,7 +34,7 @@ public abstract class Kunde implements Hilfe {
      * @param strasse  Straße
      * @param hausnr   Hausnummer
      */
-    public Kunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr ) {
+    public Kunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr, String email ) {
         this.knr = knr;
         this.nachname = nachname;
         this.vorname = vorname;
@@ -42,6 +42,7 @@ public abstract class Kunde implements Hilfe {
         this.ort = ort;
         this.strasse = strasse;
         this.hausnr = hausnr;
+        this.email = email;
     }
 
     public Kunde(String nachname) {
@@ -80,7 +81,7 @@ public abstract class Kunde implements Hilfe {
      * Setzen der Variablen
      */
 
-    public void eingaben() {
+  /*  public void eingaben() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Vorname: ");
         vorname = sc.next();
@@ -99,7 +100,7 @@ public abstract class Kunde implements Hilfe {
             email = sc.next();
         }while (!(email.matches(".+@.+\\..{2,}")));
 
-    }
+    }*/
 
     /*
     getter und setter

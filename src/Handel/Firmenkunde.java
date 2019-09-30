@@ -13,8 +13,8 @@ public class Firmenkunde extends Kunde {
         super(nachname, knr);
     }
 
-    public Firmenkunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr) {
-        super(knr, nachname, vorname, plz, ort, strasse, hausnr);
+    public Firmenkunde(int knr, String nachname, String vorname, String plz, String ort, String strasse, String hausnr, String email) {
+        super(knr, nachname, vorname, plz, ort, strasse, hausnr,email);
     }
 
     @Override

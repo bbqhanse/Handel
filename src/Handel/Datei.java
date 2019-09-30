@@ -63,11 +63,11 @@ public class Datei {
                     System.out.println(zeile1);
                     System.out.println("test");
                     if (Integer.parseInt(teile[0]) <= 500) {
-                        k = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                        k = new Privatkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6],teile[7]);
                         return k;
 
                     } else {
-                        k = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6]);
+                        k = new Firmenkunde(Integer.parseInt(teile[0]), teile[2], teile[1], teile[3], teile[4], teile[5], teile[6],teile[7]);
                         return k;
                     }
                 }
