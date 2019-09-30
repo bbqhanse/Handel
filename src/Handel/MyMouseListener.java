@@ -50,7 +50,7 @@ public class MyMouseListener extends MouseAdapter {
         }
 
 
-//        Datei d = new Datei("kunde.txt");
-//        d.schreiben(k);
+        Datei d = new Datei("kunde.txt");
+        d.schreiben(k);
     }
 }
