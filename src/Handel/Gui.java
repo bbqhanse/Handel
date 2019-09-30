@@ -5,6 +5,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class Gui extends Frame {
+
+
     public Gui() {
         this.setSize(500, 400);
         setVisible(true);
@@ -48,8 +50,7 @@ public class Gui extends Frame {
         panelDatenzusamme.add(panelDaten7);
 
         Panel kundenButton = new Panel(new FlowLayout(FlowLayout.CENTER));
-        Button b
-        Neukunde =new Button("Neukunde");
+        Button bNeukunde =new Button("Neukunde");
         kundenButton.add(bNeukunde);
         kundenButton.add(new Button("Eingabe Löschen"));
 
