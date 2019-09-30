@@ -1,12 +1,16 @@
 package Handel;
 
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Gui extends Frame {
     public Gui() {
         this.setSize(500, 400);
         setVisible(true);
         this.setLayout(new BorderLayout(10,10));
+        this.addWindowListener(new WindowClosingAdapter());
+
 
         // Panels für die Dateneingabe oder Ausgabe
         Panel panelDaten = new Panel(new FlowLayout(FlowLayout.RIGHT));
@@ -44,16 +48,27 @@ public class Gui extends Frame {
         panelDatenzusamme.add(panelDaten7);
 
         Panel kundenButton = new Panel(new FlowLayout(FlowLayout.CENTER));
-        kundenButton.add(new Button("Neukunde"));
+        Button b
+        Neukunde =new Button("Neukunde");
+        kundenButton.add(bNeukunde);
         kundenButton.add(new Button("Eingabe Löschen"));
 
         Panel panelBestandskunden = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelBestandskunden.add(new Button("Bestandskunde "));
-
+        bNeukunde.addMouseListener(new MyMouseListener());
         //Main Fenster
         this.add(panelDatenzusamme, BorderLayout.CENTER);
         this.add(kundenButton,BorderLayout.SOUTH);
         this.add(panelBestandskunden,BorderLayout.EAST);
+
+
+/*        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });*/
+
 
 
     }
