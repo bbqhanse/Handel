@@ -4,20 +4,20 @@ import java.awt.*;
 
 public class Gui extends Frame {
 
-   private Label label;
-   private TextField tf1;
-   private TextField tf2;
-   private TextField tf3;
-   private TextField tf4;
-   private TextField tf5;
-   private TextField tf6;
-   private TextField tf7;
-   private TextField tf8;
+    private Label label;
+    private TextField tfKnr;
+    private TextField tfVn;
+    private TextField tfNn;
+    private TextField tfStr;
+    private TextField tfHnr;
+    private TextField tfPlz;
+    private TextField tfOrt;
+    private TextField tfE;
 
     public Gui() {
         this.setSize(500, 400);
         setVisible(true);
-        this.setLayout(new BorderLayout(10,10));
+        this.setLayout(new BorderLayout(10, 10));
         this.addWindowListener(new WindowClosingAdapter());
 
 
@@ -25,36 +25,36 @@ public class Gui extends Frame {
         Panel panelDaten = new Panel(new FlowLayout(FlowLayout.RIGHT));
         label = new Label("Kunden nr");
         panelDaten.add(label);
-        tf1= new TextField(25);
-        panelDaten.add(tf1);
+        tfKnr = new TextField(25);
+        panelDaten.add(tfKnr);
         Panel panelDaten1 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten1.add(new Label("Vorname"));
-        tf2 =new TextField(25);
-        panelDaten1.add(tf2);
+        tfVn = new TextField(25);
+        panelDaten1.add(tfVn);
         Panel panelDaten2 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten2.add(new Label("Nachnahme"));
-        tf3=new TextField(25);
-        panelDaten2.add(tf3);
+        tfNn = new TextField(25);
+        panelDaten2.add(tfNn);
         Panel panelDaten3 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten3.add(new Label("Strasse"));
-        tf4=new TextField(25);
-        panelDaten3.add(tf4);
+        tfStr = new TextField(25);
+        panelDaten3.add(tfStr);
         Panel panelDaten4 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten4.add(new Label("Hausnummer"));
-        tf5=new TextField(25);
-        panelDaten4.add(tf5);
+        tfHnr = new TextField(25);
+        panelDaten4.add(tfHnr);
         Panel panelDaten5 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten5.add(new Label("PLZ"));
-        tf6=new TextField(25);
-        panelDaten5.add(tf6);
+        tfPlz = new TextField(25);
+        panelDaten5.add(tfPlz);
         Panel panelDaten6 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten6.add(new Label("Ort"));
-        tf7 =new TextField(25);
-        panelDaten6.add(new TextField(25));
+        tfOrt = new TextField(25);
+        panelDaten6.add(tfOrt);
         Panel panelDaten7 = new Panel(new FlowLayout(FlowLayout.RIGHT));
         panelDaten7.add(new Label("E-mail"));
-        tf8 =new TextField(25);
-        panelDaten7.add(new TextField(25));
+        tfE = new TextField(25);
+        panelDaten7.add(tfE);
 
 //Panel für die daten spalten;
         Panel panelDatenzusamme = new Panel(new GridLayout(8, 0));
@@ -68,7 +68,7 @@ public class Gui extends Frame {
         panelDatenzusamme.add(panelDaten7);
 
         Panel kundenButton = new Panel(new FlowLayout(FlowLayout.CENTER));
-        Button bNeukunde =new Button("Neukunde");
+        Button bNeukunde = new Button("Neukunde");
         kundenButton.add(bNeukunde);
         kundenButton.add(new Button("Eingabe Löschen"));
 
@@ -77,11 +77,11 @@ public class Gui extends Frame {
         panelBestandskunden.add(bBestandskunden);
         //Main Fenster
         this.add(panelDatenzusamme, BorderLayout.CENTER);
-        this.add(kundenButton,BorderLayout.SOUTH);
-        this.add(panelBestandskunden,BorderLayout.EAST);
+        this.add(kundenButton, BorderLayout.SOUTH);
+        this.add(panelBestandskunden, BorderLayout.EAST);
 
-        bNeukunde.addMouseListener(new MyMouseListener(tf1,tf2,tf3));
-        bBestandskunden.addMouseListener(new MyMouseListenerLesen(tf1,tf2,tf3));
+        bNeukunde.addMouseListener(new MyMouseListener(tfKnr, tfVn, tfNn, tfStr, tfHnr, tfPlz, tfOrt, tfE));
+        bBestandskunden.addMouseListener(new MyMouseListenerLesen(tfKnr, tfVn, tfNn, tfStr, tfHnr, tfPlz, tfOrt, tfE));
 
 /*        this.addWindowListener(new WindowAdapter() {
             @Override
@@ -91,11 +91,10 @@ public class Gui extends Frame {
         });*/
 
 
-
     }
 
-    public TextField getTf1() {
-        return tf1;
+    public TextField getTfKnr() {
+        return tfKnr;
     }
 
     private Panel daten1(String name) {
