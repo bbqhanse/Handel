@@ -73,13 +73,15 @@ public class Gui extends Frame {
         kundenButton.add(new Button("Eingabe Löschen"));
 
         Panel panelBestandskunden = new Panel(new FlowLayout(FlowLayout.RIGHT));
-        panelBestandskunden.add(new Button("Bestandskunde "));
+        Button bBestandskunden = new Button("Bestandskunde ");
+        panelBestandskunden.add(bBestandskunden);
         //Main Fenster
         this.add(panelDatenzusamme, BorderLayout.CENTER);
         this.add(kundenButton,BorderLayout.SOUTH);
         this.add(panelBestandskunden,BorderLayout.EAST);
 
         bNeukunde.addMouseListener(new MyMouseListener(tf1,tf2,tf3));
+        bBestandskunden.addMouseListener(new MyMouseListenerLesen(tf1,tf2,tf3));
 
 /*        this.addWindowListener(new WindowAdapter() {
             @Override
