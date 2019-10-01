@@ -13,4 +13,9 @@ public class Time implements Serializable {
     public String toString(){
         return hour + " " + minute;
     }
+
+    @Deprecated
+    public void oma() {
+
+    }
 }
