@@ -15,7 +15,7 @@ public class Gui extends Frame {
     private TextField tfE;
 
     public Gui() {
-        this.setSize(500, 400);
+        this.setSize(550, 400);
         setVisible(true);
         this.setLayout(new BorderLayout(10, 10));
         this.addWindowListener(new WindowClosingAdapter());
