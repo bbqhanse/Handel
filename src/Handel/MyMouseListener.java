@@ -60,8 +60,12 @@ public class MyMouseListener extends MouseAdapter {
             vorname = tfVn.getText();
         }
         //das gleiche wie oben
-        nachname = (tfNn.getText().isEmpty()? "Müller " : tfNn.getText());
-        strasse = (tfStr.getText().isEmpty()? "Hauptstr ":tfStr.getText());
+        nachname = (tfNn.getText().isEmpty() ? "Müller " : tfNn.getText());
+        strasse = (tfStr.getText().isEmpty() ? "Hauptstr " : tfStr.getText());
+        hausnr = (tfHnr.getText().isEmpty() ? "880a" : tfHnr.getText());
+        plz = (tfPlz.getText().isEmpty() ? "15222" : tfPlz.getText());
+        ort = (tfOrt.getText().isEmpty() ? "Bremen" : tfOrt.getText());
+        email = (tfE.getText().isEmpty() ? "test@test.de" : tfE.getText());
 
         if (knr <= 500) {
             k = new Privatkunde(knr, nachname, vorname, plz, ort, strasse, hausnr, email);
@@ -70,7 +74,8 @@ public class MyMouseListener extends MouseAdapter {
             k = new Firmenkunde(knr, nachname, vorname, plz, ort, strasse, hausnr, email);
         }
 
-
+        Datenbank db = new Datenbank();
+        db.dbin(k);
 /*        Datei d = new Datei("kunde.txt");
         d.schreiben(k);*/
     }
