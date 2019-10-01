@@ -1,13 +1,23 @@
 package Handel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
 
-        Gui gui = new Gui();
+//        Gui gui = new Gui();
+
+        Kunde k = new Privatkunde(20);
+        Datenbank db = new Datenbank();
+        db.dbout(k);
+        k.ausgabe();
+        int knr = k.getKnr()+1;
+        k.setKnr(knr);
+        System.out.println("insert into kunde values ("+k.getKnr()+','+k.getVorname() +','+k.getNachname()+','+k.getOrt()+','+k.getPlz()+')');
+        db.dbin(k);
 
         /*
         System.out.println("Bestellung (1) \n \t\t oder\n Neukunde(2) ");
