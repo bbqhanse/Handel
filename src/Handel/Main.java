@@ -6,19 +6,19 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
+    public static void main(String[] args) {
 
-//        Gui gui = new Gui();
+        Gui gui = new Gui();
 
-        Kunde k = new Privatkunde(20);
+/*      ///todo test für die datenbank
+        Kunde k = new Privatkunde(3);
         Datenbank db = new Datenbank();
         db.dbout(k);
         k.ausgabe();
         int knr = k.getKnr()+1;
         k.setKnr(knr);
         System.out.println("insert into kunde values ("+k.getKnr()+','+k.getVorname() +','+k.getNachname()+','+k.getOrt()+','+k.getPlz()+')');
-        db.dbin(k);
-
+        db.dbin(k);*/
         /*
         System.out.println("Bestellung (1) \n \t\t oder\n Neukunde(2) ");
         Scanner sc = new Scanner(System.in);

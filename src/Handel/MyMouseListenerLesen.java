@@ -32,8 +32,8 @@ public class MyMouseListenerLesen extends MouseAdapter {
 
         knr = Integer.parseInt(tfKnr.getText());
         Bestellung b = new Bestellung(knr);
-//        Datei d = new Datei("kunde.txt");
-//        d.lesen(b.getKunde());
+        Datenbank db = new Datenbank();     //Datei d = new Datei("kunde.txt");
+        db.dbout(b.getKunde());             //d.lesen(b.getKunde());
         tfVn.setText(b.getKunde().getNachname());
         tfNn.setText(b.getKunde().getVorname());
         tfStr.setText(b.getKunde().getStrasse());
